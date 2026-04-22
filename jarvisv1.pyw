@@ -52,7 +52,7 @@ def ouvir():
             print(f"> Voce disse: {texto}")
             return texto.lower() # DEVOLVE O TEXTO MINUSCULO
         except:
-            return "" # SE NAO ENTENDER, RETORNA NADA [cite: 16]
+            return "" # SE NAO ENTENDER, RETORNA NADA 
 
 # ---------------------------------------------------------------------------
 # FUNÇÃO DA LUZ (O DEDO NO INTERRUPTOR)
@@ -61,18 +61,18 @@ def controlar_luz(acao):
     try:
         # CONECTA NA LAMPADA USANDO O IP E A CHAVE QUE ACHAMOS
         lampada = tinytuya.BulbDevice(
-            dev_id='3738024610521ce8be8a', # ID DA LUZ
-            address='192.168.18.12', # IP DA LUZ
-            local_key='*zD=0VIXIkvsg{xb', # CHAVE NOVA [cite: 7]
+            dev_id='<id da luz do meu quarto>', # ID DA LUZ
+            address='<Ip da luz>', # IP DA LUZ
+            local_key='<chave secreta', # CHAVE 
             version=3.3
         )
         if acao == "ligar":
             lampada.turn_on() # APERTA O BOTAO DE LIGAR
-            falar(random.choice(falas.acender_luz)) # FALA UMA FRASE DO LIVRO [cite: 3]
+            falar(random.choice(falas.acender_luz)) # FALA UMA FRASE DO LIVRO 
             #lampada.set_colour(r, g, b)
         else:
             lampada.turn_off() # APERTA O BOTAO DE DESLIGAR
-            falar(random.choice(falas.desligar_luz)) # FALA UMA FRASE DO LIVRO [cite: 3]
+            falar(random.choice(falas.desligar_luz)) # FALA UMA FRASE DO LIVRO 
     except Exception as e:
         print(f"Erro na luz: {e}")
 
@@ -100,12 +100,16 @@ def executar_comando(comando):
 
     # SE VOCE FALAR "SPOTIFY"
     elif "spotify" in comando:
-        falar(random.choice(falas.spotify_fala)) # [cite: 2]
-        open_app("spotify") 
+        falar(random.choice(falas.spotify_fala)) # 
+        webbrowser.open("https://open.spotify.com")
 
+    elif "gameplay" in comando:
+        falar("hora da jogatina")
+        os.startfile(r"C:\Users\IGOLVISCK\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk") #abre o discord
+        os.startfile(r"C:\Users\IGOLVISCK\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam\Counter-Strike 2.url") #abre um jogo (cs)
     # SE VOCE DISSER "TCHAU"
     elif "desligar" in comando or "tchau" in comando:
-        falar(random.choice(falas.offline)) # [cite: 2]
+        falar(random.choice(falas.offline)) # 
         exit()
 
 # ---------------------------------------------------------------------------
@@ -113,13 +117,13 @@ def executar_comando(comando):
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
     print("Iniciando Jarvis...")
-    falar(random.choice(falas.online)) # FALA QUE CHEGOU [cite: 1]
+    falar(random.choice(falas.online)) # FALA QUE CHEGOU 
 
     while True: # LOOP INFINITO (CORAÇÃO BATENDO)
         escuta = ouvir() # FICA SEMPRE OUVINDO
         if "jarvis" in escuta: # SE VOCE FALAR O NOME DELE
-            comando = escuta.replace("jarvis", "").strip() # TIRA O NOME "JARVIS" DA FRASE [cite: 19]
+            comando = escuta.replace("jarvis", "").strip() # TIRA O NOME "JARVIS" DA FRASE 
             if comando:
                 executar_comando(comando) # FAZ A ORDEM [cite: 20]
             else:
-                falar("Sim, Igor?") # SE CHAMAR SO O NOME, ELE RESPONDE [cite: 20]
+                falar("Sim, Igor?") # SE CHAMAR SO O NOME, ELE RESPONDE 
