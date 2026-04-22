@@ -1,14 +1,14 @@
 # ---------------------------------------------------------------------------
 # PEGAR AS FERRAMENTAS (BIBLIOTECAS)
 # ---------------------------------------------------------------------------
-import speech_recognition as sr # AS ORELHAS: Serve para o computador te ouvir. [cite: 14]
-import webbrowser # O EXPLORADOR: Abre sites como o Youtube. [cite: 18]
-import os # O ZELADOR: Sabe onde as pastas e arquivos estao no PC. [cite: 5]
-import pygame # O RÁDIO: Serve para tocar o som da voz. [cite: 12, 13]
-import tinytuya # O DEDO: Serve para apertar o botao da luz. [cite: 17]
-import random # O DADO: Serve para escolher uma frase aleatoria do arquivo de falas. [cite: 5]
-from gtts import gTTS # A BOCA: A voz gratis do Google que fala com voce. [cite: 5]
-from AppOpener import open as open_app # A MÃO: Abre os programas do Windows. [cite: 17]
+import speech_recognition as sr # AS ORELHAS: Serve para o computador te ouvir. 
+import webbrowser # O EXPLORADOR: Abre sites como o Youtube. 
+import os # O ZELADOR: Sabe onde as pastas e arquivos estao no PC. 
+import pygame # O RÁDIO: Serve para tocar o som da voz. 
+import tinytuya # O DEDO: Serve para apertar o botao da luz. 
+import random # O DADO: Serve para escolher uma frase aleatoria do arquivo de falas. 
+from gtts import gTTS # A BOCA: A voz gratis do Google que fala com voce. 
+from AppOpener import open as open_app # A MÃO: Abre os programas do Windows. 
 import falas # O LIVRO: Pega as frases que escrevemos no outro arquivo. 
 
 # DIZ PARA O JARVIS ONDE ELE ESTA SENTADO (Pasta do projeto)
